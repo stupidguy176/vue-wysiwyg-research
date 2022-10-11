@@ -5,10 +5,12 @@
 <script>
 // const edjsParser = edjsHTML();
 
-import edjsHTML from './editorjs-html'
+// add from js
+// import edjsHTML from './editorjs-html'
+// const edjsParser = edjsHTML()
+
+const edjsHTML = require("editorjs-html")
 const edjsParser = edjsHTML()
-// const edjsHTML = require("editorjs-html");
-// const edjsParser = edjsHTML();
 
 export default {
   name: 'Editor',
@@ -23,6 +25,26 @@ export default {
   async mounted() {
     const editorOptions = {
       id: 'editorjs',
+      // tools: {
+      //   header: {
+      //     class: Header,
+      //     inlineToolbar: ["link"]
+      //   },
+      //   list: {
+      //     class: List,
+      //     inlineToolbar: true
+      //   },
+      //   embed: {
+      //     class: Embed,
+      //     inlineToolbar: false,
+      //     config: {
+      //       services: {
+      //         youtube: true,
+      //         coub: true
+      //       }
+      //     }
+      //   }
+      // },
       data: this.existingContent,
       onChange: this.onChange
     };
