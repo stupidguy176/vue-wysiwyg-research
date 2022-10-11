@@ -1,5 +1,8 @@
 # nuxtdemo
 
+## Notion
+[research editor](https://nosy-thought-9e7.notion.site/RESEARCH-EDTIOR-e7a8193e311940a5bdef631f8e040d7c)
+
 ## Build Setup
 
 ```bash

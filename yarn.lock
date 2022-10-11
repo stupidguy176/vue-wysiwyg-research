@@ -899,6 +899,13 @@
     "@babel/types" "^7.4.4"
     esutils "^2.0.2"
 
+"@babel/runtime@^7.10.2":
+  version "7.19.4"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.19.4.tgz#a42f814502ee467d55b38dd1c256f53a7b885c78"
+  integrity sha512-EXpLCrk55f+cYqmHsSR+yD/0gAIMxxA9QK9lnQWzhMCvt+YmoBN7Zx94s++Kv0+unHk39vxNO8t+CMA2WSS3wA==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/runtime@^7.14.0", "@babel/runtime@^7.8.4":
   version "7.19.0"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.19.0.tgz#22b11c037b094d27a8a2504ea4dcff00f50e2259"
@@ -945,6 +952,11 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
+"@editorjs/attaches@^1.2.3":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@editorjs/attaches/-/attaches-1.2.3.tgz#efe9cf5ff56507d17b27aa9284a102e86a0da264"
+  integrity sha512-lfDHchO4XHANGl6ZfD3qlV6/GCEGR4X2E8MkZhClmwzxowa99RCDJ7uuz5lppRVBh+0Lap5/iN3TqvSeuES3ug==
+
 "@editorjs/editorjs@^2.25.0":
   version "2.25.0"
   resolved "https://registry.yarnpkg.com/@editorjs/editorjs/-/editorjs-2.25.0.tgz#d0dc445260fa8f4f02f26da9b7b592f479e8b4e4"
@@ -953,6 +965,58 @@
     codex-notifier "^1.1.2"
     codex-tooltip "^1.0.5"
     nanoid "^3.1.22"
+
+"@editorjs/embed@^2.5.3":
+  version "2.5.3"
+  resolved "https://registry.yarnpkg.com/@editorjs/embed/-/embed-2.5.3.tgz#83a9e2fa74f065ba90863b34e1dcc21389cb83da"
+  integrity sha512-+X0xX2tiwQjU/B2rPDv8DOwg0suiqrt2h/o9frjR308YuY1VTpqjLRF1lIV4TmelQyVr9cXkZruaa4Ty1wvfJg==
+
+"@editorjs/header@^2.6.2":
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/@editorjs/header/-/header-2.6.2.tgz#523b6dda72ff882e53f64325840ee7bfc68ee6b7"
+  integrity sha512-U1dnT+KGjwFmpWneEEyR2Nqp42hn9iKwQDgRHWQM+y6qx82pg+eAyuIf0QWt2Mluu9uPD2CzNfvJ+pxIuwX8Lw==
+
+"@editorjs/image@^2.6.2":
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/@editorjs/image/-/image-2.6.2.tgz#2fc23666807ae20e937d08bf65589f0b1f424aed"
+  integrity sha512-lai6LFJ8m3qRmSjio66o0CX7/75OupC3FQ5JWrV/biRT6GvUHtRNWKaMowKcC2ndXtfs4w6WwRxcXlB4WhUAdg==
+
+"@editorjs/inline-code@^1.3.1":
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/@editorjs/inline-code/-/inline-code-1.3.1.tgz#4890e30d00dcaeacafbcb30459309dfd740b0d4b"
+  integrity sha512-iY6DeRmJo2Jl6sB2S9QEA9OoSp+KCHBztoY2fjPeiBcKCOKX8we5H3JQJTLxT0L/N8uJqCUiiPKgG6xvqaCn+g==
+
+"@editorjs/link@^2.4.1":
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/@editorjs/link/-/link-2.4.1.tgz#0fb500b8591068b6deb859dcfff4ec47b02f2dba"
+  integrity sha512-AqudulnZT/E5RO7itgentDedX25PGGvNmkbkdUXn8SuMKeYzfZ0hWAcgKLNNQHHCHm59F6AQz7JcXwfQuYhxyg==
+  dependencies:
+    "@babel/runtime" "^7.10.2"
+
+"@editorjs/list@^1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@editorjs/list/-/list-1.7.0.tgz#986c55026bdeee2ec7ef74fe09bd4b285e12bd1e"
+  integrity sha512-0k0RKbQqfV32u24UYHHz5mrmSu4wr246qqXBT7xQiS533Bfd4hzki6UGzvy4f275ULzi+egbjI3BXLkpoTh9iQ==
+
+"@editorjs/marker@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@editorjs/marker/-/marker-1.2.2.tgz#d9261a257436bf70179c0fa1e766ab85c823c96b"
+  integrity sha512-BN/IHbVKKahGnMAiBOV5U7XUjfF6JkIkTZ6qNLxtTr7PUPM8UsJV8G8pyll9CX+XRUYYZyokA2kEBHTS4vUyyw==
+
+"@editorjs/nested-list@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@editorjs/nested-list/-/nested-list-1.0.2.tgz#4eaacfddb0802d0cd612bdd3269d6daa58bf7fab"
+  integrity sha512-NumQfEivI29lOAuDMyVhn+VXUDGvWUPJMkjgKlUYRbnwgnPL4tK007+UzoVPLxv/f6lPOqeKcApvCj/MfskPNw==
+
+"@editorjs/paragraph@^2.8.0":
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/@editorjs/paragraph/-/paragraph-2.8.0.tgz#11cc381fcafaf8b9160517ce65d59eee93fc4af9"
+  integrity sha512-z6w5ZR0ru3p/IjxJW/tb7OcSnVttkZukQMIsnBMX1FIKc1BNdr7NwM1YoCyTl4OnC90YfL0xgES6/20/W267pw==
+
+"@editorjs/raw@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/@editorjs/raw/-/raw-2.3.1.tgz#3788d407cab83e1305545fc04b492c27ac117b7f"
+  integrity sha512-pMPsgzlmdMGR1A2K9Opky5JimO/YC71GGSAYvAlLNGFZZ+2I9K/64jo7MS6E0g9WVks2JRI+X5CF8qk2V9Ok2A==
 
 "@gar/promisify@^1.0.1":
   version "1.1.3"
@@ -3487,6 +3551,38 @@ duplexify@^3.4.2, duplexify@^3.6.0:
     inherits "^2.0.1"
     readable-stream "^2.0.0"
     stream-shift "^1.0.0"
+
+editorjs-change-case@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/editorjs-change-case/-/editorjs-change-case-0.0.3.tgz#05169afe0fa5aff679eef045377c6553dd7ff502"
+  integrity sha512-1g5RueRFLGsvKNiKdpq9nLgn0xeHylXmXJLMqqobAhB7uNJ7N978vN1mKGgMSThxi4y6mU45aNYhBJy9xQFrZA==
+
+editorjs-html@^3.4.2:
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/editorjs-html/-/editorjs-html-3.4.2.tgz#1ebe6b6631e3011ef974bb52727f645464c84428"
+  integrity sha512-Gy8FV4oHMvnPDXLsdpZYW0Dgjaagff9bPd28/WW9aFdy87FvktJxQz8H+NKpxiGcGoNY27MmjFffurK2yhXjEg==
+
+editorjs-inline-tool@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/editorjs-inline-tool/-/editorjs-inline-tool-0.4.0.tgz#a674d419bf6562c86cb74c7ffcefcfb3007db1a8"
+  integrity sha512-Ppb4e8IFPjWuNcoNM4tg9bDSo7FgMYAlqP4UhuV5W2JoJBubV5pUcpLrFrSyGTt1HJVEpbrib134zf4wxO+7VA==
+
+editorjs-style@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/editorjs-style/-/editorjs-style-3.0.3.tgz#2a758e4ef39fbb5f7756611986405713dde744dd"
+  integrity sha512-Ur+lAu5g3oaGKzWh7oJx+DsjaUNAwKouHGJDbE6+ZCF6QTxNj8EjE22DQXjtX26qL1YHt54ku2sC3lhVhm8MKQ==
+
+editorjs-table@^1.4.10:
+  version "1.4.10"
+  resolved "https://registry.yarnpkg.com/editorjs-table/-/editorjs-table-1.4.10.tgz#2714d91054732fc827087c705ceb2641a16d3ed2"
+  integrity sha512-jRpgqnimReXXtMLhjXWQ2M+qkOLNqCvKfoiExpZtzPThTFNtSPrE6WZ/HhTsOA2BMkZSejoLcf4KUYvRa5dZYw==
+
+editorjs-toggle-block@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/editorjs-toggle-block/-/editorjs-toggle-block-0.3.1.tgz#8d55ac9959639e480197d5f9c63f36a32d69304f"
+  integrity sha512-GhjK05Oa3lTRo7QxEk3vzlFG+/+T6LmxmYKnzJhKHZu7JuonL9I9w7lRqVmz5dXHr3Cik/iLPTaANvrkj5bHkA==
+  dependencies:
+    uuid "^9.0.0"
 
 ee-first@1.1.1:
   version "1.1.1"
@@ -8104,6 +8200,11 @@ utils-merge@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
   integrity sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==
+
+uuid@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-9.0.0.tgz#592f550650024a38ceb0c562f2f6aa435761efb5"
+  integrity sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==
 
 vary@^1.1.2, vary@~1.1.2:
   version "1.1.2"
