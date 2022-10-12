@@ -29,6 +29,7 @@ import Embed from '@editorjs/embed';
 import NestedList from '@editorjs/nested-list';
 // import LinkTool from '@editorjs/link';
 import Table from 'editorjs-table';
+import ColorPlugin from 'editorjs-text-color-plugin';
 
 import createGenericInlineTool, {
   ItalicInlineTool,
@@ -44,7 +45,7 @@ export default {
   methods: {
     save: function() {
       editor.save().then(savedData => {
-        console.log(savedData);
+        console.log(savedData.blocks);
         this.value = savedData;
       });
     },
@@ -71,9 +72,17 @@ export default {
           },
           raw: RawTool,
           Marker: {
-            class: Marker,
+            class: ColorPlugin, // if load from CDN, please try: window.ColorPlugin
+            config: {
+              defaultColor: '#FFBF00',
+              type: 'marker',
+            },
             shortcut: 'CMD+SHIFT+M',
           },
+          // Marker: {
+          //   class: Marker,
+          //   shortcut: 'CMD+SHIFT+M',
+          // },
           header: {
             class: Header,
             shortcut: "CMD+SHIFT+H"
@@ -140,13 +149,21 @@ export default {
           embed: Embed,
           table: {
             class: Table,
-          }
+          },
+          Color: {
+            class: ColorPlugin, // if load from CDN, please try: window.ColorPlugin
+            config: {
+              colorCollections: ['#EC7878','#9C27B0','#673AB7','#3F51B5','#0070FF','#03A9F4','#00BCD4','#4CAF50','#8BC34A','#CDDC39', '#FFF'],
+              defaultColor: '#FF1300',
+              type: 'text',
+            }
+          },
         },
         onReady: function() {
           console.log("ready");
         },
-        onChange: function() {
-          console.log("change");
+        onChange: function(data) {
+          console.log("change",data);
         }
       });
     }
