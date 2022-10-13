@@ -1,84 +1,152 @@
 <template>
-  <div>
-    <Editor
-      :blog-content="editorContent"
-      @contentChanged="onChange"
-    />
-    <Blog :editor-content="editorContent" />
+  <div >
+    <div class="editorx_body">
+      <!--editorjs id-->
+      <div class id="codex-editor"/>
+    </div>
+    <button style="margin-left: 30%;" type="button" name="button" @click="save()">save</button>
+    <div class="editorx_body">
+      <pre>{{value}}</pre>
+    </div>
   </div>
 </template>
 
 <script>
-import Blog from '~/components/Blog.vue'
-import Editor from '~/components/Editor.vue'
-const editorContent = {
-  time: 1629305722425,
-  blocks: [
-    {
-      id: 'P0gOThWo9y',
-      type: 'header',
-      data: {
-        text: 'Editor.js',
-        level: 1,
-      },
-    },
-    {
-      id: 'YsJdcKCfHt',
-      type: 'paragraph',
-      data: {
-        text: 'Hey. Meet the new Editor. On this page you can see it in action — try to edit this text.',
-      },
-    },
-    {
-      id: 'iIhdNHjLzc',
-      type: 'header',
-      data: {
-        text: 'What does it mean clean data output',
-        level: 2,
-      },
-    },
-    {
-      id: 'BaOtN0Tn3V',
-      type: 'paragraph',
-      data: {
-        text: 'Classic WYSIWYG-editors produce raw HTML-markup with both content data and content appearance. On the contrary, Editor.js outputs JSON object with data of each Block. You can see an example below',
-      },
-    },
-    {
-      id: '0ReqIOJLNx',
-      type: 'paragraph',
-      data: {
-        text: 'Given data can be used as you want: render with HTML for <code class="inline-code">Web clients</code>, render natively for <code class="inline-code">mobile apps</code>, create markup for <code class="inline-code">Facebook Instant Articles</code> or <code class="inline-code">Google AMP</code>, generate an <code class="inline-code">audio version</code> and so on.',
-      },
-    },
-    {
-      id: '7UTs8tiQqx',
-      type: 'paragraph',
-      data: {
-        text: 'Clean data is useful to sanitize, validate and process on the backend.',
-      },
-    },
-    {
-      id: 'iFrktjRJ5I',
-      type: 'paragraph',
-      data: {
-        text: "We have been working on this project more than three years. Several large media projects help us to test and debug the Editor, to make it's core more stable. At the same time we significantly improved the API. Now, it can be used to create any plugin for any task. Hope you enjoy. 😏",
-      },
-    },
-  ],
-  version: '2.22.2',
-}
+import EditorJS from "@editorjs/editorjs";
+import Header from "@editorjs/header";
+import Paragraph from "@editorjs/paragraph";
+import List from "@editorjs/list";
+import RawTool from "@editorjs/raw";
+import ChangeCase from 'editorjs-change-case';
+import InlineCode from '@editorjs/inline-code';
+import Image from '@editorjs/image';
+import Embed from '@editorjs/embed';
+import Table from 'editorjs-table';
+import ColorPlugin from 'editorjs-text-color-plugin';
+
+import createGenericInlineTool, {
+  ItalicInlineTool,
+  UnderlineInlineTool,
+} from 'editorjs-inline-tool'
 
 export default {
-  components: { Editor, Blog },
   data() {
-    return { editorContent }
+    return {
+      value: null
+    };
   },
   methods: {
-    onChange(data) {
-      console.log('component content was changed...')
-      this.editorContent = data;
+    save: function() {
+      editor.save().then(savedData => {
+        console.log(savedData.blocks);
+        this.value = savedData;
+      });
+    },
+    myEditor: function() {
+      window.editor = new EditorJS({
+        holder: "codex-editor",
+        autofocus: true,
+        /**
+         * This Tool will be used as default
+         */
+        initialBlock: "paragraph",
+        tools: {
+          // style: StyleInlineTool,
+          changeCase: {
+            class: ChangeCase,
+            config: {
+              showLocaleOption: true, // enable locale case options
+              locale: 'tr' // or ['tr', 'TR', 'tr-TR']
+            }
+          },
+          inlineCode: {
+            class: InlineCode,
+            shortcut: 'CMD+SHIFT+M',
+          },
+          raw: RawTool,
+          Marker: {
+            class: ColorPlugin, // if load from CDN, please try: window.ColorPlugin
+            config: {
+              defaultColor: '#FFBF00',
+              type: 'marker',
+            },
+            shortcut: 'CMD+SHIFT+M',
+          },
+          header: {
+            class: Header,
+            inlineToolbar: true,
+            shortcut: "CMD+SHIFT+H"
+          },
+          list: {
+            class: List,
+            // class: NestedList,
+            inlineToolbar: true,
+          },
+          paragraph: {
+            class: Paragraph,
+            config: {
+              placeholder: ".",
+              inlineToolbar: true,
+            }
+          },
+          // add custom tags or overwrite default tools of editorjs by using the same
+          // name (eg. `bold` or `italic`)
+          bold: {
+            class: createGenericInlineTool({
+              sanitize: {
+                strong: {},
+              },
+              shortcut: 'CMD+B',
+              tagName: 'STRONG',
+              toolboxIcon:
+                '<svg class="icon icon--bold" width="12px" height="14px"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bold"></use></svg>',
+            }),
+          },
+          // or use a pre-defined tool instead
+          italic: ItalicInlineTool,
+          underline: UnderlineInlineTool,
+          image: Image,
+          embed: Embed,
+          table: {
+            class: Table,
+          },
+          Color: {
+            class: ColorPlugin, // if load from CDN, please try: window.ColorPlugin
+            config: {
+              colorCollections: ['#EC7878','#9C27B0','#673AB7','#3F51B5','#0070FF','#03A9F4','#00BCD4','#4CAF50','#8BC34A','#CDDC39', '#FFF'],
+              defaultColor: '#FF1300',
+              type: 'text',
+            }
+          },
+        },
+        onReady: function() {
+          console.log("ready");
+        },
+        onChange: function(data) {
+          console.log("change",data);
+        }
+      });
     }
+  },
+  mounted: function() {
+    this.myEditor();
   }
-}
+};
 </script>
+
+<style lang="css" scoped >
+.editorx_body {
+  width: 60%;
+  margin-left: 20%;
+  border: 2px solid #f1f3f5;
+  box-sizing: border-box;
+}
+.ce-block--focused {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 0.5438550420168067) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+</style>
