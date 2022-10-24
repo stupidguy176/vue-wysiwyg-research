@@ -1,13 +1,6 @@
 <template>
-  <div >
-    <div class="editorx_body">
-      <!--editorjs id-->
-      <div class id="codex-editor"/>
-    </div>
-    <button style="margin-left: 30%;" type="button" name="button" @click="save()">save</button>
-    <div class="editorx_body">
-      <pre>{{value}}</pre>
-    </div>
+  <div>
+    <div>hi</div>
   </div>
 </template>
 
