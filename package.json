@@ -25,6 +25,7 @@
     "vue-template-compiler": "^2.7.10"
   },
   "devDependencies": {
+    "debounce": "^1.2.0",
     "@editorjs/attaches": "^1.2.3",
     "@editorjs/editorjs": "^2.25.0",
     "@editorjs/embed": "^2.5.3",
