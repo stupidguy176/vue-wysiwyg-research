@@ -1,7 +1,7 @@
 <template>
   <div>
     <div style="display: flex; justify-content: center">
-      <h1>Demo 3</h1>
+      <h1>Demo 1</h1>
     </div>
     <div class="editorx_body">
       <div class id="codex-editor3"/>
@@ -26,7 +26,6 @@ export default {
   methods: {
     save: function() {
       editor.save().then(savedData => {
-        console.log(savedData.blocks);
         this.value = savedData;
       });
     },
@@ -39,7 +38,9 @@ export default {
          */
         initialBlock: "paragraph",
         tools: EDITOR_JS_TOOLS1,
-        data: {},
+        data: {
+
+        },
         onReady: function() {
           console.log("ready");
         },
@@ -55,7 +56,7 @@ export default {
 };
 </script>
 
-<style lang="css" scoped >
+<style lang="css" scoped>
 .editorx_body {
   width: 60%;
   margin-left: 20%;

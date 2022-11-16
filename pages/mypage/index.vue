@@ -1,10 +1,11 @@
 <template>
   <div>
-    <div style="display: flex; justify-content: center">
-      <h1>Mypage</h1>
-    </div>
     <div class="editorx_body">
       <div class id="codex-editor"/>
+    </div>
+    <button style="margin-left: 30%;" type="button" name="button" @click="save()">save</button>
+    <div class="editorx_body">
+      <pre>{{value}}</pre>
     </div>
   </div>
 </template>

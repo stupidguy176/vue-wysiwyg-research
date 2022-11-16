@@ -1,10 +1,9 @@
 <template>
   <div>
     <div style="display: flex; justify-content: center">
-      <h1>Demo 2</h1>
+      <h1>Demo 3</h1>
     </div>
     <div class="editorx_body">
-      <!--editorjs id-->
       <div class id="codex-editor"/>
     </div>
     <button style="margin-left: 30%;" type="button" name="button" @click="save()">save</button>
@@ -16,7 +15,7 @@
 
 <script>
 import EditorJS from "@editorjs/editorjs";
-import {EDITOR_JS_TOOLS_2} from "./constants";
+import {EDITOR_JS_TOOLS_3} from "./constants";
 
 export default {
   data() {
@@ -39,7 +38,7 @@ export default {
          * This Tool will be used as default
          */
         initialBlock: "paragraph",
-        tools: EDITOR_JS_TOOLS_2,
+        tools: EDITOR_JS_TOOLS_3,
         onReady: function() {
           console.log("ready");
         },

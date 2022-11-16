@@ -4,7 +4,6 @@ import List from "@editorjs/list";
 import Warning from "@editorjs/warning";
 import Code from "@editorjs/code";
 import LinkTool from "@editorjs/link";
-import Image from "@editorjs/image";
 import Raw from "@editorjs/raw";
 import Header from "@editorjs/header";
 import Quote from "@editorjs/quote";
@@ -12,12 +11,14 @@ import Marker from "@editorjs/marker";
 import CheckList from "@editorjs/checklist";
 import Delimiter from "@editorjs/delimiter";
 import InlineCode from "@editorjs/inline-code";
-import SimpleImage from "@editorjs/simple-image";
+// import SimpleImage from "@editorjs/simple-image";
 import ChangeCase from "editorjs-change-case";
 import RawTool from "@editorjs/raw";
 import ColorPlugin from "editorjs-text-color-plugin";
 import Paragraph from "@editorjs/paragraph";
+// import ImageTool from "eimg/src";
 import createGenericInlineTool, {ItalicInlineTool, UnderlineInlineTool} from "editorjs-inline-tool";
+import ImageTool from "~/plugins/image-master";
 
 export const EDITOR_JS_TOOLS1 = {
   embed: Embed,
@@ -27,20 +28,19 @@ export const EDITOR_JS_TOOLS1 = {
   warning: Warning,
   code: Code,
   linkTool: LinkTool,
-  image: Image,
   raw: Raw,
   header: Header,
   quote: Quote,
   checklist: CheckList,
   delimiter: Delimiter,
   inlineCode: InlineCode,
-  simpleImage: SimpleImage
+  // simpleImage: SimpleImage
 };
 
 export const EDITOR_JS_TOOLS_2 = {
   embed: Embed,
   raw: RawTool,
-  simpleImage: SimpleImage,
+  // simpleImage: SimpleImage,
   warning: Warning,
   code: Code,
   linkTool: LinkTool,
@@ -107,6 +107,42 @@ export const EDITOR_JS_TOOLS_2 = {
     }
   },
 }
+
+
+export const EDITOR_JS_TOOLS_3 = {
+  embed: Embed,
+  image: {
+    class: ImageTool,
+    config: {
+      uploader: {
+        async uploadByFile(file) {
+          console.log('uploadByFile', file)
+          if(file.type.includes('image')) {
+            let img = file
+            img.imgUrl = URL.createObjectURL(file)
+            return {
+              success: 1,
+              file: {
+                url: img.imgUrl
+              }
+            }
+          }
+        },
+        async uploadByUrl(url){
+          console.log('uploadByUrl', url)
+          return {
+            success: 1,
+            file: {
+              url: url,
+              // any other image data you want to store, such as width, height, color, extension, etc
+            }
+          }
+        },
+      },
+    }
+  },
+}
+
 
 // export const EDITOR_JS_TOOLS_2 = {
 //   // style: StyleInlineTool,

@@ -12,7 +12,6 @@ import List from "@editorjs/list";
 import RawTool from "@editorjs/raw";
 import ChangeCase from 'editorjs-change-case';
 import InlineCode from '@editorjs/inline-code';
-import Image from '@editorjs/image';
 import Embed from '@editorjs/embed';
 import Table from 'editorjs-table';
 import ColorPlugin from 'editorjs-text-color-plugin';
@@ -98,7 +97,6 @@ export default {
           // or use a pre-defined tool instead
           italic: ItalicInlineTool,
           underline: UnderlineInlineTool,
-          image: Image,
           embed: Embed,
           table: {
             class: Table,
