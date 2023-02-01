@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "yarn build:editorjsimg && nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "build:editorjsimg": "cd resources/packages/editorjs-image && yarn build:local"
   },
   "dependencies": {
     "@codexteam/ajax": "^4.2.0",
