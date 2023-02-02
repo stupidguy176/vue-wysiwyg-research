@@ -1,0 +1,355 @@
+
+node_modules/typeorm/repository/TreeRepository.d.ts:10:37
+export declare class TreeRepository<Entity> extends Repository<Entity> {
+~~~~~~
+This type parameter might need an `extends ObjectLiteral` constraint.
+
+
+npm install typescript@4.7.4 
+
+tsc -v
+
+npm uninstall -g typescript
+
+npm install -g typescript@4.7.4
+
+
+"@nestjs/typeorm": "^8.0.3",
+"typeorm": "^0.2.44",
+
+"@nestjs/typeorm": "^8.0.3",
+"typeorm": "0.3.6",
+
+-------------------------
+add dangerouslySetInnerHTML and Uppercase
+
+- meta title change to title
+- title
+- content
+- 
+
+https://skijan.com/vi/skill/349
+https://skijan.com/vi/skill/385
+https://skijan.com/vi/skill/355
+https://skijan.com/vi/skill/240
+https://skijan.com/vi/skill/369
+https://skijan.com/vi/skill/53
+https://skijan.com/vi/skill/306
+https://skijan.com/vi/skill/347
+https://skijan.com/vi/skill/346
+https://skijan.com/vi/skill/303
+https://skijan.com/vi/skill/194
+https://skijan.com/vi/skill/333
+
+
+
+
+OAM-96506 [Skijan-vi] Text in vi
+
+https://gogojungle.backlog.jp/view/OAM-96506
+\
+&& node ./run-script-os
+
+
+
+
+"start": "node ./run-script-os",
+
+cd resources/packages/editorjs-image && yarn build:local && cd ../../../ && node ./run-script-os
+
+
+
+
+
+
+
+
+
+
+
+
+
+"/img/v3/mypage/manual/product/42504/be597d21d8c5752caa614df8a66e731c?size=o"
+
+"/img/v3/mypage/manual/product/42504/ffe684293ed0937be0e3889fd751a74f?size=o"
+
+{
+  "time": 1675320764947,
+  "blocks": [
+    {
+      "id": "Gcoybro5f6",
+      "type": "paragraph",
+      "data": {
+        "text": "vbncvbn"
+      },
+      "tunes": {
+        "textAlign": {
+          "alignment": "left"
+        }
+      }
+    },
+    {
+      "id": "MX_zGpzCEw",
+      "type": "paragraph",
+      "data": {
+        "text": "asdasdasdasd"
+      },
+      "tunes": {
+        "textAlign": {
+          "alignment": "left"
+        }
+      }
+    },
+    {
+      "id": "W18raiVKEO",
+      "type": "image",
+      "data": {
+        "file": {
+          "url": "blob:http://localhost:3000/fbf34dfa-3738-43a6-b442-ee7e99b387ce"
+        },
+        "caption": "",
+        "withBorder": false,
+        "stretched": false,
+        "withBackground": false
+      },
+      "tunes": {
+        "textAlign": {
+          "alignment": "center"
+        }
+      }
+    },
+    {
+      "id": "tlFF15Dwd1",
+      "type": "paragraph",
+      "data": {
+        "text": "aaa<font color=\"#347ea9\" style=\"background-color: rgb(203, 145, 47);\">aaaaaa</font>aaaaaaaa"
+      },
+      "tunes": {
+        "textAlign": {
+          "alignment": "left"
+        }
+      }
+    },
+    {
+      "id": "zCJM1fkJsL",
+      "type": "paragraph",
+      "data": {
+        "text": "abbb<font color=\"#347ea9\" style=\"background-color: rgb(69, 130, 98);\">b</font>bb<b>bbbbbbbbbbbb</b>bb"
+      },
+      "tunes": {
+        "textAlign": {
+          "alignment": "left"
+        }
+      }
+    },
+    {
+      "id": "GR3BeK2zrr",
+      "type": "paragraph",
+      "data": {
+        "text": "cccccccccccccccccccccccccccccccc"
+      },
+      "tunes": {
+        "textAlign": {
+          "alignment": "center"
+        }
+      }
+    },
+    {
+      "id": "VMCFIIsqXV",
+      "type": "header",
+      "data": {
+        "text": "sdsdfsdf",
+        "level": 3
+      },
+      "tunes": {
+        "textAlign": {
+          "alignment": "left"
+        }
+      }
+    },
+    {
+      "id": "pPBaZ5ZQWe",
+      "type": "paragraph",
+      "data": {
+        "text": "<code class=\"inline-code\">ASDASD</code>"
+      },
+      "tunes": {
+        "textAlign": {
+          "alignment": "left"
+        }
+      }
+    },
+    {
+      "id": "4rax5Kp0Ub",
+      "type": "header",
+      "data": {
+        "text": "as<code class=\"inline-code\">dasdasdasdasdaasdasdasdasdas</code>dasdasdasdasdasdasdaasdasdasdasdasdasdasdasdasdasdas<font color=\"#cb912f\">daasdasdasdasdasdasdasd</font>asdasdasdasdaasdasdasdasdasdasdasdasdasdasdasdaasdasdasdasdasdasdasdasdasdasd<font color=\"#458262\" style=\"background-color: rgb(203, 145, 47);\">asdaasdasdasd</font>asdasdasdasdasdasdasdasdaasdasdasdasdasdasd",
+        "level": 4
+      },
+      "tunes": {
+        "textAlign": {
+          "alignment": "left"
+        }
+      }
+    },
+    {
+      "id": "6smqqk4g28",
+      "type": "list",
+      "data": {
+        "style": "unordered",
+        "items": [
+          "aaaaaaaaaaaaaaaaaaaaaaaaa",
+          "vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv",
+          "mmmmmmmmmmmmmmmmmmmmmmmmmmmm"
+        ]
+      }
+    },
+    {
+      "id": "Wht0mwo_hc",
+      "type": "paragraph",
+      "data": {
+        "text": "asdasd<i>asdasdasdaasdasda</i>sdasdasdasd"
+      },
+      "tunes": {
+        "textAlign": {
+          "alignment": "left"
+        }
+      }
+    },
+    {
+      "id": "Y9KB-1BMSR",
+      "type": "paragraph",
+      "data": {
+        "text": "asdasd<a href=\"https://www.youtube.com/watch?v=GkVvEBWW__Y\">asdasdasdaasdasdasdas</a>dasdasd"
+      },
+      "tunes": {
+        "textAlign": {
+          "alignment": "left"
+        }
+      }
+    }
+  ],
+  "version": "2.25.0"
+}
+
+
+
+detail.target.holder.innerText
+detail.target.holder.outerText
+
+
+
+
+
+case 1: moi lan change den lai tu dau den cuoi
+case 2: luu length tu line, change line nao, luu lai length line do, tinh lai
+case 3: 
+
+
+not count image and youtube link
+
+OAM-96158 【GGJ(/mypage/affiliate/widgets)】Improve the title of E-book, fix the error on mail magazine page.ブログパーツの修正（電子書籍・メルマガ
+
+https://gogojungle.backlog.jp/view/OAM-96158
+
+
+"list"
+-----------------------data.items
+"table"
+----------------------data.content
+
+"header"
+"paragraph"
+------------------------data.text
+
+
+{
+  "time": 1675333155209,
+  "blocks": [
+    {
+      "id": "8qR7SULYZg",
+      "type": "header",
+      "data": {
+        "text": "header",
+        "level": 3
+      },
+      "tunes": {
+        "textAlign": {
+          "alignment": "left"
+        }
+      }
+    },
+    {
+      "id": "yDAFPu4ymC",
+      "type": "paragraph",
+      "data": {
+        "text": "<i><u>pa</u></i><b><code class=\"inline-code\"><font color=\"#d9730f\">ragr</font></code></b><u>a</u><font color=\"#458262\">p</font><span style=\"background-color: rgb(217, 115, 15);\">h</span>"
+      },
+      "tunes": {
+        "textAlign": {
+          "alignment": "left"
+        }
+      }
+    },
+    {
+      "id": "kAb6_PAXpi",
+      "type": "list",
+      "data": {
+        "style": "unordered",
+        "items": [
+          "list1<b>with</b>style",
+          "lis<i><font color=\"#347ea9\" style=\"background-color: rgb(120, 119, 116);\">t2</font></i><b><i><font color=\"#347ea9\" style=\"background-color: rgb(120, 119, 116);\">wi</font></i>th</b>st<code class=\"inline-code\"><u>yle<b>wi</b></u></code><b>th</b>style",
+          "list3<b>with</b>s<a href=\"https://editorjs.io/blocks/#clear\">tyle<span style=\"background-color: rgb(168, 214, 255);\">with</span>sty</a>le<b>with</b>style",
+          "list4<span style=\"background-color: rgb(69, 130, 98);\"><b>with</b>s</span><font color=\"#d44c47\"><span style=\"background-color: rgb(69, 130, 98);\">t</span>y<span style=\"background-color: rgb(69, 130, 98);\">le<b>with</b>styl</span>e</font><b><font color=\"#d44c47\">wit</font>h</b>style<b>with</b><font color=\"#ddb72c\">styl</font>e",
+          "list5<i><u><font color=\"#d9730f\">with</font><font color=\"#d44c47\">stylew<b>i</b></font><font color=\"#d9730f\"><b>thsty</b></font><code class=\"inline-code\"><b>l</b>ewithstyle</code><font color=\"#d9730f\">withstyle</font><font color=\"#d44c47\">wi</font><font color=\"#d9730f\">thstyle</font></u></i>"
+        ]
+      }
+    },
+    {
+      "id": "TxwTysDWxV",
+      "type": "table",
+      "data": {
+        "withHeadings": false,
+        "content": [
+          [
+            "111",
+            "222",
+            "333",
+            "444"
+          ],
+          [
+            "555",
+            "666",
+            "777",
+            "888"
+          ],
+          [
+            "999",
+            "101010",
+            "111111",
+            "121212"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "qPFXAKIubb",
+      "type": "header",
+      "data": {
+        "text": "a<i>aaaaa</i><u>aaaaa</u><a href=\"https://editorjs.io/blocks/#clear\">aaaa</a><code class=\"inline-code\">aaaa</code><font color=\"#d44c47\">aaa</font><span style=\"background-color: rgb(159, 107, 83);\">aaa</span><font color=\"#cb912f\" style=\"background-color: rgb(69, 130, 98);\">aaa</font>",
+        "level": 3
+      },
+      "tunes": {
+        "textAlign": {
+          "alignment": "left"
+        }
+      }
+    },
+    {
+      "id": "DqjEjUvKPQ",
+      "type": "delimiter",
+      "data": {}
+    }
+  ],
+  "version": "2.25.0"
+}
