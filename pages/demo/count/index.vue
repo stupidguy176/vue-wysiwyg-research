@@ -159,7 +159,7 @@ export default {
     async onCountCharacterNew() {
       const content = await editor.save()
       const blocks = content.blocks
-      const array = await Promise.all(blocks.map(block => this.countItem(block)))
+      const array = await Promise.all(blocks.map(this.countItem))
       this.countValueNew = array.length ? array.reduce((a, b) => a + b) : 0
     },
     onSetDefaultData() {
