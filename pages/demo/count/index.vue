@@ -8,6 +8,9 @@
       <div class="wrapper-count">
         <div class="count-itm">Count:<pre>{{countValue}}</pre></div>
       </div>
+      <div class="wrapper-count">
+        <div class="count-itm">Count:<pre>{{countValueNew}}</pre></div>
+      </div>
     </div>
     <div class="wrapper">
       <div class="editor-body">
@@ -47,168 +50,7 @@ import {
   checkFileSize,
   isBlobUrl,
 } from "./common"
-
-const editorContent = {
-  "time": 1675320764947,
-  "blocks": [
-    {
-      "id": "Gcoybro5f6",
-      "type": "paragraph",
-      "data": {
-        "text": "vbncvbn"
-      },
-      "tunes": {
-        "textAlign": {
-          "alignment": "left"
-        }
-      }
-    },
-    {
-      "id": "MX_zGpzCEw",
-      "type": "paragraph",
-      "data": {
-        "text": "asdasdasdasd"
-      },
-      "tunes": {
-        "textAlign": {
-          "alignment": "left"
-        }
-      }
-    },
-    {
-      "id": "tlFF15Dwd1",
-      "type": "paragraph",
-      "data": {
-        "text": "aaa<font color=\"#347ea9\" style=\"background-color: rgb(203, 145, 47);\">aaaaaa</font>aaaaaaaa"
-      },
-      "tunes": {
-        "textAlign": {
-          "alignment": "left"
-        }
-      }
-    },
-    {
-      "id": "zCJM1fkJsL",
-      "type": "paragraph",
-      "data": {
-        "text": "abbb<font color=\"#347ea9\" style=\"background-color: rgb(69, 130, 98);\">b</font>bb<b>bbbbbbbbbbbb</b>bb"
-      },
-      "tunes": {
-        "textAlign": {
-          "alignment": "left"
-        }
-      }
-    },
-    {
-      "id": "GR3BeK2zrr",
-      "type": "paragraph",
-      "data": {
-        "text": "cccccccccccccccccccccccccccccccc"
-      },
-      "tunes": {
-        "textAlign": {
-          "alignment": "center"
-        }
-      }
-    },
-    {
-      "id": "VMCFIIsqXV",
-      "type": "header",
-      "data": {
-        "text": "sdsdfsdf",
-        "level": 3
-      },
-      "tunes": {
-        "textAlign": {
-          "alignment": "left"
-        }
-      }
-    },
-    {
-      "id": "pPBaZ5ZQWe",
-      "type": "paragraph",
-      "data": {
-        "text": "<code class=\"inline-code\">ASDASD</code>"
-      },
-      "tunes": {
-        "textAlign": {
-          "alignment": "left"
-        }
-      }
-    },
-    {
-      "id": "4rax5Kp0Ub",
-      "type": "header",
-      "data": {
-        "text": "as<code class=\"inline-code\">dasdasdasdasdaasdasdasdasdas</code>dasdasdasdasdasdasdaasdasdasdasdasdasdasdasdasdasdas<font color=\"#cb912f\">daasdasdasdasdasdasdasd</font>asdasdasdasdaasdasdasdasdasdasdasdasdasdasdasdaasdasdasdasdasdasdasdasdasdasd<font color=\"#458262\" style=\"background-color: rgb(203, 145, 47);\">asdaasdasdasd</font>asdasdasdasdasdasdasdasdaasdasdasdasdasdasd",
-        "level": 4
-      },
-      "tunes": {
-        "textAlign": {
-          "alignment": "left"
-        }
-      }
-    },
-    {
-      "id": "6smqqk4g28",
-      "type": "list",
-      "data": {
-        "style": "unordered",
-        "items": [
-          "aaaaaaaaaaaaaaaaaaaaaaaaa",
-          "vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv",
-          "mmmmmmmmmmmmmmmmmmmmmmmmmmmm"
-        ]
-      }
-    },
-    {
-      "id": "Wht0mwo_hc",
-      "type": "paragraph",
-      "data": {
-        "text": "asdasd<i>asdasdasdaasdasda</i>sdasdasdasd"
-      },
-      "tunes": {
-        "textAlign": {
-          "alignment": "left"
-        }
-      }
-    },
-    {
-      "id": "Y9KB-1BMSR",
-      "type": "paragraph",
-      "data": {
-        "text": "asdasd<a href=\"https://www.youtube.com/watch?v=GkVvEBWW__Y\">asdasdasdaasdasdasdas</a>dasdasd"
-      },
-      "tunes": {
-        "textAlign": {
-          "alignment": "left"
-        }
-      }
-    },
-    {
-      "id": "dla9sqHPyv",
-      "type": "table",
-      "data": {
-        "withHeadings": false,
-        "content": [
-          [
-            "aa",
-            "bb"
-          ],
-          [
-            "cc",
-            "dd"
-          ],
-          [
-            "ee",
-            "ff"
-          ]
-        ]
-      }
-    },
-  ],
-  "version": "2.25.0"
-}
+import editorContent from "@/pages/demo/count/demoData";
 
 export default {
   name: "count",
@@ -216,6 +58,7 @@ export default {
     return {
       value: null,
       countValue: null,
+      countValueNew: null,
       editorContent
     };
   },
@@ -245,6 +88,7 @@ export default {
       let count = 0
 
       for(let i = 0; i < blocks.length; i++) {
+
         if(blocks[i].type === 'header' || blocks[i].type === 'paragraph') {
           const text = blocks[i].data.text
           const num = this.getTextLength(text)
@@ -272,6 +116,51 @@ export default {
       }
 
       this.countValue = count
+    },
+    countItem(block) {
+      return new Promise((resolve => {
+        let count = 0
+        try {
+          if(block.type !== 'header' && block.type !== 'paragraph' && block.type !== 'list' && block.type !== 'table') {
+            resolve(count)
+          }
+
+          if(block.type === 'header' || block.type === 'paragraph') {
+            const text = block.data.text
+            const num = this.getTextLength(text)
+            count += num
+          }
+
+          if(block.type === 'list') {
+            const items = block.data.items
+            for(let j = 0; j < items.length; j++) {
+              const num = this.getTextLength(items[j])
+              count += num
+            }
+          }
+
+          if(block.type === 'table') {
+            const content = block.data.content
+            for(let row = 0; row < content.length; row++) {
+              const rowItem = content[row]
+              for(let column = 0; column < rowItem.length; column++) {
+                const num = this.getTextLength(rowItem[column])
+                count += num
+              }
+            }
+          }
+
+          resolve(count)
+        } catch {
+          resolve(count)
+        }
+      }))
+    },
+    async onCountCharacterNew() {
+      const content = await editor.save()
+      const blocks = content.blocks
+      const array = await Promise.all(blocks.map(block => this.countItem(block)))
+      this.countValueNew = array.length ? array.reduce((a, b) => a + b) : 0
     },
     onSetDefaultData() {
       editor.render(editorContent)
@@ -444,6 +333,7 @@ export default {
           // console.log('event type------------------------------')
           // console.log(event.type)
           me.onCountCharacter()
+          me.onCountCharacterNew()
           if(
             event.detail.index !== -1 &&
             event.detail.target.name === IMAGE_TYPE &&
